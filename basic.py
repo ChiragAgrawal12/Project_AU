@@ -70,5 +70,5 @@ print(s[1])    # This will print 'h', the second character of the string
 print(s[6])    # This will print ' ', the seventh character of the string
 print(s[-1])   # This will print 'l', the last character of the string
 print(s[0:5])  # This will print 'Chira', the first five characters of the string
-print(s[6:])   # This will print 'Agrawal', from the seventh
+print(s[6:])   # This will print 'Agrawal', from the seventh character to the end
 
