@@ -31,3 +31,44 @@ print(name3)
 print(name1.upper())  # Converts string to uppercase
 print(name2.lower())  # Converts string to lowercase
 
+# Demonstrating arithmetic operations
+y = 7+8
+print(y)
+
+# Demonstrating line continuation
+y1 = 7+\
+8
+print(y1)  # This will print 15, demonstrating line continuation with backslash
+
+# Demonstrating incorrect line continuation
+# y2 = 7 + 
+# 8
+# print(y2)  # This will raise a syntax error due to incorrect line continuation
+
+name='Chirag Agrawal\'s book'  # Using backslash to escape single quote in string
+print(name)
+
+# Demonstrating boolean expressions
+print(3 == 4)  # This will print False since 3 is not equal to 4
+print(3 != 4)  # This will print True since 3 is not equal to 4
+print(3 < 4)   # This will print True since 3 is less than 4
+print(3 > 4)   # This will print False since 3 is not greater than 4
+print(3 <= 4)  # This will print True since 3 is less than or equal to 4
+print(3 >= 4)  # This will print False since 3 is not greater than or equal to 4
+print(True+True)    # This will print 2 since True is treated as 1
+print(True+False)   # This will print 1 since True is treated as 1 and False as 0
+print(False+False)  # This will print 0 since both are False
+
+# Demonstrating string operations
+print("S"+"a") # This will print "Sa" since it concatenates the two strings
+print("S"*3)   # This will print "SSS" since it repeats the string 3 times
+
+# Demonstrating string indexing and slicing
+s = "Chirag Agrawal"
+print(s[0])    # This will print 'C', the first character of the string
+print(s[1])    # This will print 'h', the second character of the string
+print(s[6])    # This will print ' ', the seventh character of the string
+print(s[-1])   # This will print 'l', the last character of the string
+print(s[0:5])  # This will print 'Chira', the first five characters of the string
+print(s[6:])   # This will print 'Agrawal', from the seventh
+
