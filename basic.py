@@ -104,3 +104,9 @@ print(set_1)       # This will print the entire set
 print(1 in set_1)  # This will print True since 1 is in the set
 print(5 in set_1)  # This will print False since 5 is not in the set
 print(set_1[0])    # This will raise an error since sets do not support indexing
+
+# Demonstrating print function with different separators and end characters
+print("Chirag", "Agrawal", sep="-")           # This will print "Chirag-Agrawal" with a hyphen as separator
+print("Chirag", "Agrawal", sep=" ", end="!")  # This will print "Chirag Agrawal!" with a space as separator and '!' at the end
+print("/t")                                   # This will print a tab character, but it won't be visible in the output
+print(r"/t")                                  # This will print the string "/t" literally, without interpreting it as a tab character
