@@ -110,3 +110,74 @@ print("Chirag", "Agrawal", sep="-")           # This will print "Chirag-Agrawal"
 print("Chirag", "Agrawal", sep=" ", end="!")  # This will print "Chirag Agrawal!" with a space as separator and '!' at the end
 print("/t")                                   # This will print a tab character, but it won't be visible in the output
 print(r"/t")                                  # This will print the string "/t" literally, without interpreting it as a tab character
+
+# Demonstrating the use of membership operators
+print("Chirag" in "Chirag Agrawal")      # This will print True since "Chirag" is a substring of "Chirag Agrawal"
+print("Chirag" not in "Chirag Agrawal")  # This will print False since "Chirag" is indeed a substring of "Chirag Agrawal"
+
+# Demonstrating the use of identity operators
+a = [1, 2, 3]
+b = a
+c = a[:]       # This creates a shallow copy of the list a
+print(a is b)  # This will print True since b is the same object as a
+print(a is c)  # This will print False since c is a different object (a copy of a)
+print(a == c)  # This will print True since the contents of a and c are the same
+print(a is not b)  # This will print False since b is the same object as a
+print(a is not c)  # This will print True since c is a different object (a copy of a)
+
+# Demonstrating the swap of 2 numbers without using a third variable
+x = 5
+y = 10
+print("Before swap: x =", x, ", y =", y)
+x, y = y, x                                  # This swaps the values of x and y
+print("After swap: x =", x, ", y =", y)
+
+# Another way to swap without using a third variable
+
+x = x + y
+y = x - y
+x = x - y
+print("After another swap: x =", x, ", y =", y)
+
+# # Demonstrating the use of loops
+# # Using if-elif-else statements
+a=int(input("Enter age"))
+if a>18:
+    print("You are an adult")        # This will print if the age is greater than 18
+if a>30:
+    print("You are in your 30s")     # This will print if the age is greater than 30
+if a>50:
+    print("You are in your 50s")     # This will print if the age is greater than 50
+    
+# This will print all the conditions if true, but it is better to use elif for mutually exclusive conditions
+if a>18:
+    print("You are an adult")        # This will print if the age is greater than 18
+elif a>30:
+    print("You are in your 30s")     # This will print if the age is greater than 30
+elif a>50:
+    print("You are in your 50s")     # This will print if the age is greater than 50
+
+# Now using else to handle the case when none of the conditions are true
+if 18<a<30:
+    print("You are an adult")        # This will print if the age is greater than 18
+elif a>30:
+    print("You are in your 30s")     # This will print if the age is greater than 30
+else:
+    print("You are not an adult")     # This will print if the age is not greater than 18
+    
+# Task to input email and password and check if they are correct
+db_email= "chirag@gmail.com"
+db_password= "123"
+email = input("Enter your email: ")
+password = input("Enter your password: ")
+if (db_email==email) and (db_password==password):
+    print("Login successful")
+elif (db_email==email) and (db_password!=password):
+    print("Incorrect password")
+    new_password = input("Enter new password: ")
+    if new_password == db_password:
+        print("Der aaye durust aaye")  # This will print if the new password is the same as the old password
+    else:
+        print("Tumse na ho payega")  # This will print if the new password is different from the old password
+else:
+    print("Incorrect email")
