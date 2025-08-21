@@ -203,7 +203,7 @@ elif (db_email==email) and (db_password!=password):
 else:
     print("Incorrect email")
     
-Demonstrating the use of for loop
+# Demonstrating the use of for loop
 
 for word in "Chirag":
     print(word,"hi")       # This will print each character in the string "Chirag" followed by "hi"
@@ -273,4 +273,90 @@ total = 0
 while num>= 0:
     num = int(input("Enter a number (negative to stop): "))
     total += num
-print("Total sum:", total)  # This will print the total sum of all entered numbers until a negative number is entered
+print("Total sum:", total)           # This will print the total sum of all entered numbers until a negative number is entered
+
+# Demonstrating the use of break and continue statements
+
+for i in range(1,10):
+    print("hii")
+    break
+for i in range(1,10):
+    print("hii")
+    continue
+for i in range(1,10):
+    continue
+    print("hii")
+for i in range(1,4):
+    if i==2:
+        continue
+    print(i)    
+import random                                       #Random generates a random value each time
+a=random.randint(1,10)                              #Randint generates a random integer between the given limit each time we run it            
+print(a)
+
+# Take a random number using randint function from random module from 1 to 100 and ask user to guess it until they get it right or 5 chances are over
+
+import random
+number = random.randint(1, 100)      # This will generate a random number between 1 and 100
+print(number)
+print("Guess the number between 1 and 100")
+for i in range(1, 6):                # This will give the user 5 chances to guess the number
+    guess = int(input("Enter your guess: "))
+    if guess == number:
+        print("Congratulations! You guessed it right.")
+        break
+    elif guess < number:
+        print("Too low! Try again.")
+    else:
+        print("Too high! Try again.")
+        
+# Or using while loop to give 5 chances
+
+import random
+number = random.randint(1, 100)
+counter = 0
+while True:
+    print("Guessing Game")
+    user_guess=int(input("Enter your guess: "))
+    if user_guess == number:
+        print("Congratulations! You guessed it right.")
+        break
+    elif user_guess < number:
+        print("Too low! Try again.")
+        counter+= 1
+    elif user_guess > number:
+        print("Too high! Try again.")
+        counter+= 1
+    if counter==5:
+        print("Sorry, you've used all your chances. The number was:", number)
+        break
+        
+# Demonstrating the reverse order of number
+
+num= int(input("Enter a number to reverse: "))
+rev_num = 0
+while num > 0:
+    digit = num % 10                   # This will get the last digit of the number
+    rev_num = rev_num * 10 + digit     # This will shift the current reversed number left and add the last digit
+    num //= 10                         # This will remove the last digit from the number
+print("Reversed number is:", rev_num)  # This will print the reversed number 
+
+# Check palindrome of a word without using slicing
+
+word = input("Enter a word to check if it is a palindrome: ")
+reversed_word = ""
+for char in word:                         # This will iterate through each character in the word
+    reversed_word = char + reversed_word  # This will prepend the character to the reversed word
+if word == reversed_word:                 # This will check if the original word is equal to the reversed word
+    print("The word is a palindrome.")
+else:
+    print("The word is not a palindrome.")
+    
+# Or using slicing
+                        
+word = input("Enter a word to check if it is a palindrome: ")
+if word == word[::-1]:                    # This will check if the word is equal to its reverse by slicing and comparing
+    print("The word is a palindrome.")
+else:
+    print("The word is not a palindrome.")
+     
