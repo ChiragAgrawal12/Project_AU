@@ -34,48 +34,48 @@ print(list45)
 list45.extend(["new3","new4"])
 print(list45)
 
-# # remove()	Removes the first item with the specified value
-# list45.remove("new")  # removed element can't be stored in a variable if needed
-# print(list45)
+# remove()	Removes the first item with the specified value
+list45.remove("new")  # removed element can't be stored in a variable if needed
+print(list45)
 
-# # pop()	Removes the element at the specified position
-# list45.pop(2)         # poped element can be stored in a variable if needed
-# print(list45)
+# pop()	Removes the element at the specified position
+list45.pop(2)         # poped element can be stored in a variable if needed
+print(list45)
 
-# # del	Removes the element at the specified position
-# del list45[2]        # deleted element can't be stored in a variable if needed
-# print(list45)
+# del	Removes the element at the specified position
+del list45[2]        # deleted element can't be stored in a variable if needed
+print(list45)
 
-# # clear()	Removes all the elements from the list
-# list45.clear()
-# print(list45)
+# clear()	Removes all the elements from the list
+list45.clear()
+print(list45)
 
-# # copy()	Returns a copy of the list
-# list46=[1,2,3,4,5]
-# list47=list46.copy()
-# print(list47)
+# copy()	Returns a copy of the list
+list46=[1,2,3,4,5]
+list47=list46.copy()
+print(list47)
 
-# # count()	Returns the number of elements with the specified value
-# print(list47.count(2))
+# count()	Returns the number of elements with the specified value
+print(list47.count(2))
 
-# # index()	Returns the index of the first element with the specified value
-# print(list47.index(3))
+# index()	Returns the index of the first element with the specified value
+print(list47.index(3))
 
-# # reverse()	Reverses the order of the list
-# list47.reverse()
-# print(list47)
+# reverse()	Reverses the order of the list
+list47.reverse()
+print(list47)
 
-# # sort()	Sorts the list
-# list48=[3,1,4,2,5]
-# list48.sort()
-# print(list48)
+# sort()	Sorts the list
+list48=[3,1,4,2,5]
+list48.sort()
+print(list48)
 
-# # sort() with reverse=True	Sorts the list in descending order
-# list48.sort(reverse=True)
-# print(list48)
+# sort() with reverse=True	Sorts the list in descending order
+list48.sort(reverse=True)
+print(list48)
 
-# list45=list45+[1,2,3]  # concatenation of lists
-# print(list45)
+list45=list45+[1,2,3]  # concatenation of lists
+print(list45)
 
 # LIST COMPREHENSION
 # A list comprehension is a syntactic construct which allows lists to be created from other iterables like tuples, strings, arrays, etc.
@@ -119,13 +119,66 @@ test()              # Calling a function
 
 x=50
 def func():
-    x=x+10          # This will give error as x is not defined in local scope
-    global x        # This will use global variable x inside the function
-    x=x+10          # This will change the value of global variable x
+    # x=x+10          # This will give error as x is not defined in local scope
+    global x          # This will use global variable x inside the function
+    x=x+10            # This will change the value of global variable x
     print(x)
-func()              # This will give error as x is not defined in local scope
+func()                # This will give error as x is not defined in local scope
 
 def test2(a,b):   # Function with parameters
     print(a+b)
 test2()           # This will give error as augments are missing
-test2(10,20)     # This will print 30
+test2(10,20)      # This will print 30
+
+def test3(a,b=5):  # Function with default parameter
+    print(a+b)
+test3(10)          # This will print 15 as b is default 5
+test3(10,20)       # This will print 30 as b is given
+
+def test4(a,b=5,c):  # This will give error as non-default parameter c is after default parameter b
+    print(a+b+c)
+test4(10,20,30)      # This will print 60
+
+def test5(*args):   # Function with variable number of arguments , * is used to pass variable number of non-keyword arguments to a function
+    sum=0
+    for i in args:
+        sum+=i
+    print(sum)      # args is a tuple
+test5(1,2,3,4,5)    # This will print 15
+
+def test6(*args):
+    sum=0
+    for i in args:
+        sum+=i
+    return sum       # Function returning a value of sum of all arguments of the given data type
+test6(1,2,3,4,5)+20  # This will return 35
+
+def age_checker(age):
+    if age<18:
+        return "Minor"
+    elif age>=18 and age<60:
+        return "Adult"
+    else:
+        return "Senior Citizen"
+age_checker(25)                   # This will return "Adult"
+w=age_checker                     # Creating reference of function
+w(17)                             # This will return "Minor"
+
+def test7(**kwargs):  # Function with variable number of keyword arguments
+    print(kwargs)     # kwargs is a dictionary
+test7(a=1,b=2,c=3)    # This will print {'a': 1, 'b': 2, 'c': 3}
+
+def func():
+    def func_inner(a,b):
+        return a+b
+    return func_inner   # Function returning another function
+func()(10,20)           # This will return 30
+
+def my_strip(x):
+    return x.strip()           # Function to remove leading and trailing spaces from a string
+def upper(x):
+    return x.upper()           # Function to convert a string to uppercase
+list_funcs=[my_strip,upper]    # List of functions
+for i in list_funcs:
+    dirty_data=" chiRag "
+    print(i(dirty_data))       # This will print "chiRag" and " CHIRAG "
