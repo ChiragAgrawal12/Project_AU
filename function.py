@@ -135,7 +135,7 @@ def test3(a,b=5):  # Function with default parameter
 test3(10)          # This will print 15 as b is default 5
 test3(10,20)       # This will print 30 as b is given
 
-def test4(a,b=5,c):  # This will give error as non-default parameter c is after default parameter b
+def test4(a,b,c):      # (a,b=5,c): This will give error as non-default parameter c is after default parameter b
     print(a+b+c)
 test4(10,20,30)      # This will print 60
 
