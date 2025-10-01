@@ -1,5 +1,6 @@
 import pickle
 
-with open('student_data.pkl', 'wab') as file:
+with open("student_data.pkl","rb") as file:
     Data = pickle.load(file)
-    print(Data[0].display())
+for student in Data:
+    print(student.display())

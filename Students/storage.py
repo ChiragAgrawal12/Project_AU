@@ -1,15 +1,18 @@
 import pickle
 import os
 from student import Students
+file_name="student_data.pkl"
+def save_Student_data(Student):
+        Students=[]
+        if os.path.exists(file_name):
+            with open("student_data.pkl","rb") as file:
+                Students=pickle.load(file)
+        Students.append(Student)
+        with open("student_data.pkl","wb") as file:
+            pickle.dump(Students,file)
 
-s2=Students("Aaditya",2,90)
-s3=Students("Muskan",3,95)
-s2.display()
-
-# def save_Student_data(Student):
-#         Students=[]
-#         Students.append(Student)
-#         with open('student_data.pkl', 'wb') as file:
-#             pickle.dump(Students, file)
-            
-# save_Student_data(s2)
+def load_student_data():
+    with open("student_data.pkl","rb") as file:
+        Data=pickle.load(file)
+    for student in Data:
+        print(student.display())
