@@ -11,8 +11,8 @@ def save_Student_data(Student):
         with open("student_data.pkl","wb") as file:
             pickle.dump(Students,file)
 
-def load_student_data():
+def load_data():
     with open("student_data.pkl","rb") as file:
-        Data=pickle.load(file)
-    for student in Data:
-        print(student.display())
+        data=pickle.load(file)
+        for student in data:
+            print(student.display())
