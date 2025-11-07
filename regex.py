@@ -53,10 +53,30 @@ pattern7=r"\[\w+\]"                                      #  "[[]\w+]"         \[
 pattern8=r"[^Tk]og"
 pattern9=r"^Ta\w+"
 pattern10=r"(\d+)(GB|TB)"
-matches=re.findall(pattern10,strings23)                  # findall returns a list of all matches in the string
-print(matches)                                           # finditer returns an iterator yielding match objects
+pattern11=r"(\d+)(GB|TB)(\w{0,})"
 
-for ele in strings23:
-    match=re.findall(pattern9,ele)
-    if match:
-        print(ele)
+
+
+matches=re.findall(pattern10,strings23)                  # findall returns a list of all matches in the string
+# matches=re.finditer(pattern10,strings23)                 # finditer returns an iterator yielding match objects
+# matches=re.search(pattern10,strings23)                   # search returns a match object if there is a match anywhere in the string for only 1st occurence
+# print(matches)                                           # prints the match object
+
+
+# for match in matches:
+#     print(match.group())                                 # group() returns the part of the string where there is a match for respective group number
+
+
+# for ele in strings23:
+#     match=re.finditer(pattern9,ele)
+#     if match:
+#         print(ele)
+
+new_list=[]
+for tup in matches:
+    if tup[1]=='TB':
+        new_num=int(tup[0])*1024
+        new_list.append(new_num)
+    else:
+        new_list.append(tup[0])
+print(new_list)
